@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("characters")
 public class MarvelUniverseCharacterController {
 
     MarvelUniverseCharacterService charactersService;
@@ -19,13 +19,13 @@ public class MarvelUniverseCharacterController {
         this.charactersService = charactersService;
     }
 
-    @GetMapping("/characters")
+    @GetMapping()
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Flux<List<MarvelUniverseCharacter>> getCharacters() {
         return charactersService.getCharacters();
     }
 
-    @GetMapping("/characters/{id}")
+    @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Mono<List<MarvelUniverseCharacter>> getCharacter(@PathVariable int id) {
         return charactersService.getCharacterById(id);
