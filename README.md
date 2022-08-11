@@ -15,4 +15,4 @@ This Spring Boot Api intends to consume the official Marvel Api using Webflux We
 
 ## Known Bugs
 
-* Deserializing the Json data sent via a URI into a Java Object has proven difficult. Webclient may not be the best option since the official Marvel Api returns a nested Json which Jackson cannot deserialize. Gson may be the better choice to access the desired key/value pairs.
+* Deserializing the Json data sent via a URI into a Java Object has proven difficult. Webclient may not be the best option since the official Marvel Api returns a nested Json which Jackson fails to deserialize because the data I require is nested. Gson may be the better choice to access the desired key/value pairs.
